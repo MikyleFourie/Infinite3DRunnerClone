@@ -7,12 +7,12 @@
             "actions": [
                 {
                     "name": "Left",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "9cbd7341-3d38-4844-b3da-2648a7ba2ec6",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Right",
@@ -37,6 +37,24 @@
                     "type": "Button",
                     "id": "343cf752-e92e-4be5-a743-e7920fe6fb68",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwipeLeft",
+                    "type": "PassThrough",
+                    "id": "926b5015-1b8d-4565-8aae-ce983c64baa1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwipeRight",
+                    "type": "PassThrough",
+                    "id": "8a8799e6-3d14-47e3-abf1-1467058a8570",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -139,6 +157,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc7b2177-31b9-4c5d-a7f0-e2bdc11937bb",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwipeLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "26b252b9-ed24-46be-ae83-94fcd5eeb139",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwipeRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
