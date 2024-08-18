@@ -1,5 +1,5 @@
 {
-    "name": "InputActions",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Player",
@@ -42,22 +42,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwipeLeft",
-                    "type": "PassThrough",
-                    "id": "926b5015-1b8d-4565-8aae-ce983c64baa1",
-                    "expectedControlType": "Vector2",
+                    "name": "Touch",
+                    "type": "Button",
+                    "id": "f7488c64-a28b-45dd-ad4c-ba9a735488b8",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwipeRight",
-                    "type": "PassThrough",
-                    "id": "8a8799e6-3d14-47e3-abf1-1467058a8570",
+                    "name": "Swipe",
+                    "type": "Value",
+                    "id": "661cda40-067b-4f27-8f50-91017e3873cf",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -162,23 +162,23 @@
                 },
                 {
                     "name": "",
-                    "id": "fc7b2177-31b9-4c5d-a7f0-e2bdc11937bb",
-                    "path": "<Touchscreen>/delta",
+                    "id": "edfa7dbe-5b97-4f2d-a6e9-95f1cde9fd36",
+                    "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SwipeLeft",
+                    "action": "Touch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "26b252b9-ed24-46be-ae83-94fcd5eeb139",
-                    "path": "<Touchscreen>/delta",
+                    "id": "e27d6460-aa0b-46ca-a6e3-04b2a74df699",
+                    "path": "<Touchscreen>/primaryTouch/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SwipeRight",
+                    "action": "Swipe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
