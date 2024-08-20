@@ -12,14 +12,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dodgeSpeed = 10f;
     [SerializeField] float jumpPower = 7f;
     [SerializeField] float y;
+    //[SerializeField] float forwardSpeed = 0f;
+    [SerializeField] float rollDuration;
     [SerializeField] private float minimumSwipeMagnitude = 10f;
     [SerializeField] private float directionThreshold = 1.5f;
     private Vector2 _swipeDirection;
 
-
+    Color originalColor;
     private CharacterController m_char;
     private void Start()
     {
+        originalColor = GetComponent<Renderer>().material.color;
         transform.position = Vector3.zero;
         m_char = GetComponent<CharacterController>();
         _controls = new PlayerControls();
@@ -32,14 +35,23 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Vector3 moveVector = new Vector3(x - transform.position.x, (y - 1) * Time.deltaTime, 0);
+        Vector3 moveVector = new Vector3(x - transform.position.x, (y - 1) * Time.deltaTime * 4, 0 /*forwardSpeed * Time.deltaTime*/);
         x = Mathf.Lerp(x, newXPos, Time.deltaTime * dodgeSpeed);
         m_char.Move(moveVector);
 
         //Brings character back down
         if (y > 0)
-            y -= jumpPower * 2 * Time.deltaTime;
+            y -= jumpPower * 3f * Time.deltaTime;
 
+        if (rollDuration > 0)
+        {
+            rollDuration -= Time.deltaTime;
+        }
+        else if (rollDuration <= 0)
+        {
+            rollDuration = 0;
+            GetComponent<Renderer>().material.color = originalColor;
+        }
     }
     private void ProcessSwipeDelta(InputAction.CallbackContext context)
     {
@@ -79,6 +91,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Debug.Log("Swiping Down");
+                Roll();
             }
         }
 
@@ -120,6 +133,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             print("Key Down");
+            Roll();
         }
     }
 
@@ -160,9 +174,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Jumped while grounded");
             y = jumpPower;
         }
-        //else
-        //{
-        //    y -= jumpPower * 2 * Time.deltaTime;
-        //}
+    }
+
+    public void Roll()
+    {
+        rollDuration = 0.2f;
+        GetComponent<Renderer>().material.color = Color.red;
+        y -= jumpPower / 2;
     }
 }
