@@ -8,6 +8,9 @@ public class LvlGenerator : MonoBehaviour
     public List<GameObject> roadSections = new List<GameObject>();
     private GameObject lastInstantiatedSection;
 
+    // Reference to SpeedTracker (you need to assign this in the Inspector)
+    public SpeedTracker speedTracker;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Load"))
@@ -23,7 +26,14 @@ public class LvlGenerator : MonoBehaviour
             } while (selectedSection == lastInstantiatedSection && Random.value < 0.7f); // 70% chance to re-roll
 
             // Instantiate the selected road section
-            Instantiate(selectedSection, new Vector3(0, 3, 31.2f), Quaternion.identity);
+            GameObject instantiatedSection = Instantiate(selectedSection, new Vector3(0, 3, 31.2f), Quaternion.identity);
+
+            // Apply the current speed to the new PlatformMove component
+            PlatformMove platformMove = instantiatedSection.GetComponent<PlatformMove>();
+            if (platformMove != null && speedTracker != null)
+            {
+                platformMove.SetSpeed(speedTracker.GetCurrentSpeed());
+            }
 
             // Update the last instantiated section
             lastInstantiatedSection = selectedSection;

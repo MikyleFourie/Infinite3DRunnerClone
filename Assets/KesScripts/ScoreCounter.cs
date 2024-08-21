@@ -19,7 +19,7 @@ public class ScoreCounter : MonoBehaviour
     // Coroutine to wait for a certain time before starting the increment process
     private IEnumerator StartIncrementingAfterDelay()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0);
         canIncrement = true;
         StartCoroutine(IncrementNumber());
     }
@@ -29,7 +29,7 @@ public class ScoreCounter : MonoBehaviour
     {
         while (canIncrement)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.05f);
             number++;
             Score.text = number.ToString("000000000");
         }

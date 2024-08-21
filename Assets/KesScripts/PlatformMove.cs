@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class PlatformMove : MonoBehaviour
 {
+    public float currentSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, 0, -2) * Time.deltaTime;
+        transform.position += new Vector3(0, 0, currentSpeed) * Time.deltaTime;
+        Debug.Log(currentSpeed);
+    }
+
+    // Public method to modify the speed
+    public void SetSpeed(float newSpeed)
+    {
+        currentSpeed = newSpeed;
     }
 
     // Destroys the previous road section
@@ -25,7 +33,4 @@ public class PlatformMove : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-
 }
