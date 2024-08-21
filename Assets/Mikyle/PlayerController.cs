@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public enum SIDE { Left, Middle, Right }
 public class PlayerController : MonoBehaviour
 {
-    private PlayerControls _controls;
+    [SerializeField] private PlayerControls _controls;
     [SerializeField] SIDE m_Side = SIDE.Middle;
     [SerializeField] float newXPos = 0f;
     [SerializeField] float xValue = 2;
@@ -71,12 +71,12 @@ public class PlayerController : MonoBehaviour
             //Horizontal Swipe
             if (_swipeDirection.x > 0)
             {
-                Debug.Log("Swiping Right");
+                //Debug.Log("Swiping Right");
                 MoveRight();
             }
             else
             {
-                Debug.Log("Swiping Left");
+                //Debug.Log("Swiping Left");
                 MoveLeft();
             }
         }
@@ -85,12 +85,12 @@ public class PlayerController : MonoBehaviour
             //Vertical Swipe
             if (_swipeDirection.y > 0)
             {
-                Debug.Log("Swiping Up");
+                //Debug.Log("Swiping Up");
                 Jump();
             }
             else
             {
-                Debug.Log("Swiping Down");
+                //Debug.Log("Swiping Down");
                 Roll();
             }
         }
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            print("Key Left");
+            //print("Key Left");
             MoveLeft();
         }
     }
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            print("Key Right");
+            //print("Key Right");
             MoveRight();
         }
     }
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            print("Key Up");
+            //print("Key Up");
             Jump();
         }
     }
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            print("Key Down");
+            //print("Key Down");
             Roll();
         }
     }
@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
     {
         if (m_char.isGrounded)
         {
-            Debug.Log("Jumped while grounded");
+            //Debug.Log("Jumped while grounded");
             y = jumpPower;
         }
     }

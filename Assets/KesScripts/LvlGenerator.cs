@@ -8,8 +8,9 @@ public class LvlGenerator : MonoBehaviour
     public List<GameObject> roadSections = new List<GameObject>();
     private GameObject lastInstantiatedSection;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Trigger on " + this.transform.gameObject.name + " by " + other.name);
         if (other.gameObject.CompareTag("Load"))
         {
             GameObject selectedSection;
@@ -23,7 +24,9 @@ public class LvlGenerator : MonoBehaviour
             } while (selectedSection == lastInstantiatedSection && Random.value < 0.7f); // 70% chance to re-roll
 
             // Instantiate the selected road section
-            Instantiate(selectedSection, new Vector3(0, 3, 31.2f), Quaternion.identity);
+            //Instantiate(selectedSection, new Vector3(0, 0/*3*/, 43.36f), Quaternion.identity); //For one space apart
+            Instantiate(selectedSection, new Vector3(0, 0, 73f), Quaternion.identity); //For two spaces apart
+            Debug.Log("Intantiated: " + selectedSection.name);
 
             // Update the last instantiated section
             lastInstantiatedSection = selectedSection;
