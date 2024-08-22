@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         originalColor = GetComponent<Renderer>().material.color;
-        transform.position = Vector3.zero;
+        //transform.position = Vector3.zero;
         m_char = GetComponent<CharacterController>();
         _controls = new PlayerControls();
 

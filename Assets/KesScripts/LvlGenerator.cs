@@ -9,7 +9,7 @@ public class LvlGenerator : MonoBehaviour
     private GameObject lastInstantiatedSection;
 
     // Reference to SpeedTracker (you need to assign this in the Inspector)
-    //public SpeedTracker speedTracker;
+    public SpeedTracker speedTracker;
 
     private void OnTriggerExit(Collider other)
     {
@@ -27,17 +27,17 @@ public class LvlGenerator : MonoBehaviour
             } while (selectedSection == lastInstantiatedSection && Random.value < 0.7f); // 70% chance to re-roll
 
             // Instantiate the selected road section
-            GameObject instantiatedSection = Instantiate(selectedSection, new Vector3(0, 3, 31.2f), Quaternion.identity);
+            //GameObject instantiatedSection = Instantiate(selectedSection, new Vector3(0, 3, 31.2f), Quaternion.identity);
 
-            //Instantiate(selectedSection, new Vector3(0, 0, 73f), Quaternion.identity); //For two spaces apart
-            //Debug.Log("Intantiated: " + selectedSection.name);
+            GameObject instantiatedSection = Instantiate(selectedSection, new Vector3(0, 0, 138f), Quaternion.identity);
+            Debug.Log("Intantiated: " + selectedSection.name);
 
             // Apply the current speed to the new PlatformMove component
-            //PlatformMove platformMove = instantiatedSection.GetComponent<PlatformMove>();
-            //if (platformMove != null && speedTracker != null)
-            //{
-            //    platformMove.SetSpeed(speedTracker.GetCurrentSpeed());
-            //}
+            PlatformMove platformMove = instantiatedSection.GetComponent<PlatformMove>();
+            if (platformMove != null && speedTracker != null)
+            {
+                platformMove.SetSpeed(speedTracker.GetCurrentSpeed());
+            }
 
             // Update the last instantiated section
             lastInstantiatedSection = selectedSection;
