@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpeedTracker : MonoBehaviour
 {
     public float SpeedMultiplier = 1.25f;
-    private float currentSpeed = -10f; // Initial speed
+    [SerializeField] private float currentSpeed = -10f; // Initial speed
 
     void Start()
     {
