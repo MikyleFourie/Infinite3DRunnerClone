@@ -153,7 +153,8 @@ PrefabInstance:
       value: TreesGroup (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: 2ad9b2a4e25793f498f379e9aa587312, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ad9b2a4e25793f498f379e9aa587312, type: 3}
@@ -464,7 +465,8 @@ PrefabInstance:
       value: Sides
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: dc81e09af4182394a9c52703ac7a389e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc81e09af4182394a9c52703ac7a389e, type: 3}
@@ -627,7 +629,8 @@ PrefabInstance:
       value: Sides (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: dc81e09af4182394a9c52703ac7a389e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc81e09af4182394a9c52703ac7a389e, type: 3}
@@ -716,7 +719,8 @@ PrefabInstance:
       value: TreesGroup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: 2ad9b2a4e25793f498f379e9aa587312, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ad9b2a4e25793f498f379e9aa587312, type: 3}
