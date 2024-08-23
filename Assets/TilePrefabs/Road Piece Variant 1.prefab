@@ -540,7 +540,9 @@ PrefabInstance:
       value: Barrier2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2876587960591877694, guid: 3d6ee2cca1cb14e4babf532519b129ad, type: 3}
+    - {fileID: 3210712613299102262, guid: 3d6ee2cca1cb14e4babf532519b129ad, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d6ee2cca1cb14e4babf532519b129ad, type: 3}
