@@ -20,11 +20,15 @@ public class PlayerController : MonoBehaviour
 
     Color originalColor;
     private CharacterController m_char;
+    float originalHeight;
+    Vector3 originalCenter;
     private void Start()
     {
         originalColor = GetComponent<Renderer>().material.color;
-        //transform.position = Vector3.zero;
         m_char = GetComponent<CharacterController>();
+        originalHeight = m_char.height;
+        originalCenter = m_char.center;
+
         _controls = new PlayerControls();
 
         _controls.Player.Enable();
@@ -51,6 +55,13 @@ public class PlayerController : MonoBehaviour
         {
             rollDuration = 0;
             GetComponent<Renderer>().material.color = originalColor;
+
+            // Reset character size
+            transform.localScale = new Vector3(1f, 1f, 1f);
+
+            // Reset the CharacterController collider
+            m_char.height = originalHeight;
+            m_char.center = originalCenter;
         }
     }
     private void ProcessSwipeDelta(InputAction.CallbackContext context)
@@ -178,8 +189,16 @@ public class PlayerController : MonoBehaviour
 
     public void Roll()
     {
-        rollDuration = 0.2f;
+        rollDuration = 0.4f;
         GetComponent<Renderer>().material.color = Color.red;
         y -= jumpPower / 2;
+
+        // Shrink the character to half size
+        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+        // Adjust the CharacterController collider
+        m_char.height = originalHeight * 0.5f;
+        m_char.center = new Vector3(originalCenter.x, originalCenter.y * 0.5f, originalCenter.z);
+
     }
 }
