@@ -24,6 +24,8 @@ public class SceneController : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
+        Time.timeScale = 1f;
+
     }
 
     public void QuitGame()

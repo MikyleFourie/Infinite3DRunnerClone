@@ -9,11 +9,17 @@ public class ScoreCounter : MonoBehaviour
     private int number = 0;
     private bool canIncrement = false;
 
+    private const string HighscoreKey = "Highscore";
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(StartIncrementingAfterDelay());
-        Score.text = "000000000";
+        Score.text = number.ToString("000000000");
+
+        // Load the highscore when the game starts
+        int highscore = PlayerPrefs.GetInt(HighscoreKey, 0);
+        // Optionally use this value to display or use later
     }
 
     // Coroutine to wait for a certain time before starting the increment process
@@ -32,6 +38,13 @@ public class ScoreCounter : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
             number++;
             Score.text = number.ToString("000000000");
+
+            // Check if the current score is higher than the highscore
+            int highscore = PlayerPrefs.GetInt(HighscoreKey, 0);
+            if (number > highscore)
+            {
+                PlayerPrefs.SetInt(HighscoreKey, number);
+            }
         }
     }
 
@@ -56,7 +69,7 @@ public class ScoreCounter : MonoBehaviour
         number = 0;
         Score.text = number.ToString("000000000");
         canIncrement = false;
-        StartCoroutine(StartIncrementingAfterDelay()); 
+        StartCoroutine(StartIncrementingAfterDelay());
     }
 
     private void ContinueCount()
@@ -66,5 +79,11 @@ public class ScoreCounter : MonoBehaviour
             canIncrement = true;
             StartCoroutine(IncrementNumber());
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        // Save the highscore when the application quits
+        PlayerPrefs.Save();
     }
 }

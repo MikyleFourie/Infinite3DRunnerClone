@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class CollisionChecker : MonoBehaviour
 {
+
+    public GameObject GameOverMenu;
+
     // Start is called before the first frame update
     void Start()
     {
+        GameOverMenu.SetActive(false);
 
     }
 
@@ -18,7 +22,7 @@ public class CollisionChecker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+
         //Check if the object collided with has the tag "obstacle"
         if (other.gameObject.CompareTag("obstacle"))
         {
@@ -33,6 +37,14 @@ public class CollisionChecker : MonoBehaviour
             {
                 platformMove.SetSpeed(0f);
             }
+
+            GameOverMenu.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
+
+
+
     }
 }

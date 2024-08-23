@@ -46,6 +46,14 @@ public class PauseNPlay : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
+    public void Restart()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+        Time.timeScale = 1f;
+
+    }
+
     public void QuitGame()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
