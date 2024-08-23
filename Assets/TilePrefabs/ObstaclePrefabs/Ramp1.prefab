@@ -218,7 +218,10 @@ PrefabInstance:
       value: SandRamp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: 32e6e54bcf9a53f4d87151f014d17bb7, type: 3}
+    - {fileID: -8391222552659086748, guid: 32e6e54bcf9a53f4d87151f014d17bb7, type: 3}
+    - {fileID: -8700617353114198275, guid: 32e6e54bcf9a53f4d87151f014d17bb7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32e6e54bcf9a53f4d87151f014d17bb7, type: 3}
