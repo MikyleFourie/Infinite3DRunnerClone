@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public enum SIDE { Left, Middle, Right }
 public class PlayerController : MonoBehaviour
@@ -22,8 +23,13 @@ public class PlayerController : MonoBehaviour
     private CharacterController m_char;
     float originalHeight;
     Vector3 originalCenter;
+
+    public Animator GhostAnim;
+
     private void Start()
     {
+        GhostAnim = GetComponent<Animator>();
+
         originalColor = GetComponent<Renderer>().material.color;
         m_char = GetComponent<CharacterController>();
         originalHeight = m_char.height;
@@ -156,12 +162,17 @@ public class PlayerController : MonoBehaviour
         {
             newXPos = -xValue;
             m_Side = SIDE.Left;
+
+            GhostAnim.SetInteger("Action", 2);
         }
         else if (m_Side == SIDE.Right)
         {
             newXPos = 0;
             m_Side = SIDE.Middle;
+
+            GhostAnim.SetInteger("Action", 2);
         }
+        StartCoroutine(WaitForAnimation());
     }
 
     public void MoveRight()
@@ -170,12 +181,17 @@ public class PlayerController : MonoBehaviour
         {
             newXPos = xValue;
             m_Side = SIDE.Right;
+
+            GhostAnim.SetInteger("Action", 3);
         }
         else if (m_Side == SIDE.Left)
         {
             newXPos = 0;
             m_Side = SIDE.Middle;
+
+            GhostAnim.SetInteger("Action", 3);
         }
+        StartCoroutine(WaitForAnimation());
     }
 
     public void Jump()
@@ -184,7 +200,11 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("Jumped while grounded");
             y = jumpPower;
+
+            GhostAnim.SetInteger("Action", 1);
         }
+
+        StartCoroutine(WaitForAnimation());
     }
 
     public void Roll()
@@ -201,4 +221,14 @@ public class PlayerController : MonoBehaviour
         m_char.center = new Vector3(originalCenter.x, originalCenter.y * 0.5f, originalCenter.z);
 
     }
+
+    IEnumerator WaitForAnimation()
+    {
+        // Wait for 1 second
+        yield return new WaitForSeconds(1f);
+
+        // Code to execute after the wait
+        GhostAnim.SetInteger("Action", 0);
+    }
+
 }
