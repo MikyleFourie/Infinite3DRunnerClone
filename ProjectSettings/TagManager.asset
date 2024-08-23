@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Load
   - Destroy
+  - obstacle
   layers:
   - Default
   - TransparentFX
