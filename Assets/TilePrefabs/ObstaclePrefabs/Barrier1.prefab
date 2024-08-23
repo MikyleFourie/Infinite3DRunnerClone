@@ -104,7 +104,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -2}
 --- !u!1 &1042145379182360824
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -2}
 --- !u!1 &4931364140722716954
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: -1}
+  m_Center: {x: 0, y: 0, z: -4}
 --- !u!1 &5723462237951039465
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +371,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -2}
 --- !u!1001 &4435075580108804277
 PrefabInstance:
   m_ObjectHideFlags: 0
