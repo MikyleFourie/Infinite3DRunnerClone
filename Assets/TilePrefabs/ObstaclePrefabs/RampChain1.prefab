@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 962190297455814606, guid: 4024754724cf8fd4b868eb5db67d094d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.75
+      value: 17.01
       objectReference: {fileID: 0}
     - target: {fileID: 962190297455814606, guid: 4024754724cf8fd4b868eb5db67d094d,
         type: 3}
@@ -98,7 +98,8 @@ PrefabInstance:
       value: Train1 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5140203145879430774, guid: 4024754724cf8fd4b868eb5db67d094d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4024754724cf8fd4b868eb5db67d094d, type: 3}
@@ -129,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 962190297455814606, guid: 4024754724cf8fd4b868eb5db67d094d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.74
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 962190297455814606, guid: 4024754724cf8fd4b868eb5db67d094d,
         type: 3}
@@ -172,7 +173,8 @@ PrefabInstance:
       value: Train1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5140203145879430774, guid: 4024754724cf8fd4b868eb5db67d094d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4024754724cf8fd4b868eb5db67d094d, type: 3}
