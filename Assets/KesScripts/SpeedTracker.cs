@@ -16,7 +16,7 @@ public class SpeedTracker : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(15f);
 
             // Increase the speed
             currentSpeed *= SpeedMultiplier;

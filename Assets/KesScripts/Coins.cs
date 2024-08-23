@@ -39,6 +39,14 @@ public class Coins : MonoBehaviour
                 audioSource.PlayOneShot(collectSound);
             }
 
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+
             // Increment session coins and update display
             sessionScore++;
             if (sessionCoinCount != null)
@@ -50,6 +58,7 @@ public class Coins : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
     void OnDestroy()
     {
